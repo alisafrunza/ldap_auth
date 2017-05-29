@@ -1,0 +1,17 @@
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-8">
+	<h2>Log in</h2>
+
+	<%= bootstrap_form_for("", url: connect_path, method: :post) do |f| %>
+	  <div class="field">
+		  <%= f.email_field :email%>
+	  </div>
+
+		<div class="field">
+		  <%= f.password_field :password %>
+	  </div>
+
+	  <div class="actions">
+		  <%= f.submit "Log in" %>
+		</div>
+	<% end %>
+</div>

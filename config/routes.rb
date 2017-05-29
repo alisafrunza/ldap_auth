@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get  :ldap_auth, action: :index, controller: :ldap_auth
+  post :connect, controller: :ldap_auth
+
+  root to: "ldap_auth#home"
 end

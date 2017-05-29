@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LdapAuth</title>
-    <%= csrf_meta_tags %>
+	<head>
+		<title>LdapAuth</title>
+		<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-  <body>
-    <%= yield %>
-  </body>
+	<body>
+		<% if flash[:error] %>
+			<%= content_tag(:div, flash[:error],   :class => "alert alert-danger") %>
+		<% end %>
+		<% if flash[:success] %>
+			<%= content_tag(:div, flash[:success], :class => "alert alert-success") %>
+		<% end %>
+		<%= yield %>
+	</body>
 </html>
